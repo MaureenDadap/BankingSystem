@@ -1,0 +1,37 @@
+[{
+        "address": "aksdbf",
+        "balance": 8956789,
+        "name": "asdgfh",
+        "age": "78"
+    },
+    {
+        "address": "kasjdfl",
+        "balance": 56789,
+        "name": "kaye",
+        "age": "56"
+    },
+    {
+        "address": "aofglskf",
+        "balance": 456789,
+        "name": "mau",
+        "age": "56"
+    },
+    {
+        "address": "asdkjf;as",
+        "balance": 4567,
+        "name": "rigor",
+        "transactions": [
+            "28\/01\/2020 01:54 PM - Created a bank account"
+        ],
+        "age": "67"
+    },
+    {
+        "address": "llkasdjflka",
+        "balance": 67890,
+        "name": "aasldjf",
+        "transactions": [
+            "28\/01\/2020 02:03 PM - Created a bank account"
+        ],
+        "age": "79"
+    }
+]
