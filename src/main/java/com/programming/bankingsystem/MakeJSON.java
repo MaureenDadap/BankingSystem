@@ -50,6 +50,7 @@ public class MakeJSON {
             JSONArray existingJson = (JSONArray) obj;
 
             JSONObject user = new JSONObject(); // new entries to be added
+            user.put("id", countUsers()+1);
             user.put("name", name);
             user.put("age", age);
             user.put("address", address);
@@ -66,8 +67,15 @@ public class MakeJSON {
         }
     }
 
-    void writeTransaction() {
+    void writeTransaction(int id, String transaction) {
+        try {
+            Object obj = parseJsonFile(directory);
+            JSONArray existingJson = (JSONArray) obj;
+            
+        } catch (Exception e) {
 
+        }
+        
     }
 
     void getUsers() {
