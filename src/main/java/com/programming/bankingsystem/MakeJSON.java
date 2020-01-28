@@ -72,6 +72,10 @@ public class MakeJSON {
             Object obj = parseJsonFile(directory);
             JSONArray existingJson = (JSONArray) obj;
             
+            
+            for (int i = 0; i < existingJson.size(); i++) {
+                 
+            }
         } catch (Exception e) {
 
         }
