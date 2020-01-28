@@ -20,13 +20,14 @@ public class MakeJSON {
     }
 
     int countUsers() {
+        int count = 0;
         try {
             Object obj = parseJsonFile(directory);
-            JSONObject jsonObject = (JSONObject) obj;
+            JSONArray jsonArray= (JSONArray) obj;
+            count = jsonArray.size();
         } catch (Exception e) {
-
         }
-        return 0;
+        return count;
     }
 
     void writeToJson(JSONArray toBeAdded) {

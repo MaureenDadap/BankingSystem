@@ -31,7 +31,7 @@ public class mainClass {
 	}
 
 	public static void main(String[] args) {
-		//makeJSON.checkJSON();
+		System.out.println(regCount);
 
 		Scanner input = new Scanner(System.in);
 		// Lists and Collections
