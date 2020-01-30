@@ -1,10 +1,62 @@
 [{
-    "address": "jhsdfklk",
-    "balance": 456789,
-    "name": "maureen",
-    "id": 1,
-    "transactions": [
-        "28\/01\/2020 02:26 PM - Created a bank account"
-    ],
-    "age": "56"
-}]
+        "address": "jhsdfklk",
+        "balance": 456989,
+        "name": "maureen",
+        "id": 1,
+        "transactions": [
+            "28\/01\/2020 02:26 PM - Created a bank account",
+            "29\/01\/2020 03:35 PM - Deposited Php 678",
+            "29\/01\/2020 03:43 PM - Deposited Php 67890"
+        ],
+        "age": "56"
+    },
+    {
+        "address": "asdfasdf",
+        "balance": 517900,
+        "name": "kate",
+        "id": 2,
+        "transactions": [
+            "28\/01\/2020 04:08 PM - Created a bank account"
+        ],
+        "age": "23"
+    },
+    {
+        "address": "afjasd",
+        "balance": 890,
+        "name": "kate",
+        "id": 3,
+        "transactions": [
+            "29\/01\/2020 01:18 PM - Created a bank account",
+            "29\/01\/2020 04:01 PM - Deposited Php 10",
+            "29\/01\/2020 04:08 PM - Deposited Php 10",
+            "29\/01\/2020 04:12 PM - Deposited Php 10",
+            "29\/01\/2020 04:21 PM - Withdrew Php 10"
+        ],
+        "age": "89"
+    },
+    {
+        "address": "brgy. bucal",
+        "balance": 51400,
+        "name": "bowwi katigbak",
+        "id": 4,
+        "transactions": [
+            "29\/01\/2020 04:42 PM - Created a bank account",
+            "29\/01\/2020 04:43 PM - Deposited Php 1000",
+            "29\/01\/2020 04:43 PM - Withdrew Php 1500",
+            "29\/01\/2020 04:43 PM - Withdrew Php 600",
+            "29\/01\/2020 05:21 PM - Received Php 1000 from sir d"
+        ],
+        "age": "20"
+    },
+    {
+        "address": "batino",
+        "balance": 79000,
+        "name": "sir d",
+        "id": 5,
+        "transactions": [
+            "29\/01\/2020 05:21 PM - Created a bank account",
+            "29\/01\/2020 05:21 PM - Transfered Php 1000 to bowwi katigbak"
+        ],
+        "age": "21"
+    }
+]

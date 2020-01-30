@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class Register {
 	static MakeJSON makeJSON = new MakeJSON();
-	public static void regMethod(List<String> holdersList) {
+	public static void regMethod() {
 		Scanner input = new Scanner(System.in);
 		String name, transactionString, age, address;
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy hh:mm aa");
@@ -43,7 +43,7 @@ public class Register {
 			} else {
 				ageInt = Integer.parseInt(age);
 
-				if (ageInt > 150) {
+				if (ageInt > 99) {
 					System.out.println("\t\t  ________________________________________________");
 					System.out.println("\t\t||                                                ||");
 					System.out.println("\t\t|| > INVALID INPUT. It is not a valid age.        ||");
@@ -110,6 +110,6 @@ public class Register {
 
 		System.out.println("\n\t\t--> " + name + " deposited Php " + initDeposit
 				+ " and is now registered as account holder #" + mainClass.regCount);
-		System.out.println("\t\t--> There are now currently " + holdersList.size() + " registered account holder(s).");
+		System.out.println("\t\t--> There are now currently " + makeJSON.countUsers() + " registered account holder(s).");
 	}
 }

@@ -1,4 +1,5 @@
 package com.programming.bankingsystem;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -11,36 +12,13 @@ import org.json.simple.JSONObject;
 
 public class mainClass {
 	static MakeJSON makeJSON = new MakeJSON();
-	//map <account number, transaction list>
-	public static Map<Integer, List<String>> transactionsMap = new HashMap<Integer, List<String>>(); 
+	public static Map<Integer, List<String>> transactionsMap = new HashMap<Integer, List<String>>();
 	public static int regCount = makeJSON.countUsers();
-
-	public static Boolean userListChecker(List<String> holdersList) {
-		boolean holdersListEmpty = false;
-		if (holdersList.isEmpty())
-			return holdersListEmpty = true;
-		else
-			return holdersListEmpty;
-	}
-
-	public static void putTransactions(int key, String transString) {
-		if (transactionsMap.get(key) == null) {
-			transactionsMap.put(key, new ArrayList<String>());
-		}
-		transactionsMap.get(key).add(transString);
-	}
 
 	public static void main(String[] args) {
 		System.out.println(regCount);
 
 		Scanner input = new Scanner(System.in);
-		// Lists and Collections
-		List<String> acctHoldersList = new ArrayList<String>();
-		List<String> acctHolderAgeList = new ArrayList<String>();
-		List<String> acctHolderAddressList = new ArrayList<String>();
-		List<Integer> holdersBalance = new ArrayList<Integer>();
-		List<Date> dateCreateAcc = new ArrayList<Date>();
-
 		// variable for menu
 		int ch = 0;
 
@@ -69,37 +47,37 @@ public class mainClass {
 						// account registration module
 						System.out.print(
 								"=============================================================================================\n\n\t\t\t\tREGISTER ACCOUNTS\n\n=============================================================================================");
-						Register.regMethod(acctHoldersList);
+						Register.regMethod();
 
 					} else if (ch == 2) {
 						// display accounts module
 						System.out.print(
 								"=============================================================================================\n\n\t\t\t\tDISPLAY REGISTERED ACCOUNTS\n\n=============================================================================================");
-						DisplayAccounts.displayAcc(acctHoldersList, holdersBalance, dateCreateAcc);
+						DisplayAccounts.displayAcc();
 
 					} else if (ch == 3) {
 						// deposit module
 						System.out.print(
 								"=============================================================================================\n\n\t\t\t\t\tDEPOSIT\n\n=============================================================================================");
-						Deposit.deposit(acctHoldersList, holdersBalance);
+						Deposit.deposit();
 
 					} else if (ch == 4) {
 						// money withdrawal module
 						System.out.print(
 								"=============================================================================================\n\n\t\t\t\tMONEY WITHDRAWAL\n\n=============================================================================================");
-						Withdraw.withdraw(acctHoldersList, holdersBalance);
+						Withdraw.withdraw();
 
 					} else if (ch == 5) {
 						// balance transfer module
 						System.out.print(
 								"=============================================================================================\n\n\t\t\t\tTRANSFER BALANCE\n\n=============================================================================================");
-						BalanceTransfer.balanceTransfer(acctHoldersList, holdersBalance);
+						BalanceTransfer.balanceTransfer();
 
 					} else if (ch == 6) {
 						// balance checker module
 						System.out.print(
 								"=============================================================================================\n\n\t\t\t\tCHECK BALANCE\n\n=============================================================================================");
-						BalanceCheck.balanceCheck(acctHoldersList, holdersBalance, dateCreateAcc, acctHolderAgeList, acctHolderAddressList);
+						BalanceCheck.balanceCheck();
 
 					} else if (ch == 0)
 						System.exit(0);

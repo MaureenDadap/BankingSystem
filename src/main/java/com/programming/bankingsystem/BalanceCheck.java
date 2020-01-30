@@ -1,17 +1,18 @@
 package com.programming.bankingsystem;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 public class BalanceCheck {
-	public static void balanceCheck(List<String> holdersList, List<Integer> holdersBalance, List<Date> dateList,
-			List<String> ageList, List<String> addressList) {
+	public static void balanceCheck() {
+		MakeJSON makeJSON = new MakeJSON();
 		Scanner input = new Scanner(System.in);
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy hh:mm aa");
 		int ch;
 
-		if (mainClass.userListChecker(holdersList)) {
+		if (makeJSON.countUsers() == 0) {
 			System.out.println("\n\t\t  ________________________________________________");
 			System.out.println("\t\t||                                                ||");
 			System.out.println("\t\t|| > There are no registered account holders yet. ||");
@@ -19,18 +20,18 @@ public class BalanceCheck {
 		} else {
 			System.out.println("\n\tACCOUNT HOLDERS");
 
-			for (int x = 0; x < holdersList.size(); x++) {
-				System.out.println("\t\t" + (x + 1) + ". " + holdersList.get(x));
+			for (int x = 0; x < makeJSON.countUsers(); x++) {
+				System.out.println("\t\t" + (x + 1) + ". " + makeJSON.getUsers().get(x));
 			}
 
 			while (true) {
 				System.out.print("\n\tCheck balance of (type in the number): ");
 				try {
 					ch = Integer.parseInt(input.next());
-					if (!(ch > holdersList.size()) && !(ch <= 0))
+					if (!(ch > makeJSON.countUsers()) && !(ch <= 0))
 						break;
 
-					else if (ch > holdersList.size() || ch <= 0) {
+					else if (ch > makeJSON.countUsers() || ch <= 0) {
 						System.out.println("\t\t  ________________________________________________");
 						System.out.println("\t\t||                                                ||");
 						System.out.println("\t\t|| > INVALID INPUT. The account you are trying    ||");
@@ -48,20 +49,20 @@ public class BalanceCheck {
 
 			System.out.println("\t\t  ________________________________________________");
 			System.out.println("\t\t||                                                ||");
-			System.out.println("\t\t|| > ACCOUNT HOLDER NAME: " + holdersList.get(ch - 1));
+			System.out.println("\t\t|| > ACCOUNT HOLDER NAME: " + makeJSON.getUsers().get(ch - 1));
 			System.out.println("\t\t||________________________________________________||");
 
-			System.out.println("\n\tACCOUNT NUMBER\t\tACCOUNT HOLDER NAME\tBALANCE\t\tDATE JOINED\t\tAGE\t\tADDRESS\n");
-			System.out.println("\t      " + ch + " -------------- " + holdersList.get(ch - 1) + " ---------- Php "
-					+ holdersBalance.get(ch - 1) + " ---------- " + formatter.format(dateList.get(ch - 1))
-					+ " ---------- " + ageList.get(ch - 1) + " ---------- " + addressList.get(ch - 1));
+			System.out.println("\n\tACCOUNT NUMBER\t\tACCOUNT HOLDER NAME\tBALANCE\t\tAGE\t\tADDRESS\n");
+			System.out.println("\t      " + ch + " ----------------- " + makeJSON.getUsers().get(ch - 1)
+					+ " ---------- Php " + makeJSON.getBalance(ch) + " -------------- " + makeJSON.getAge(ch)
+					+ " ---------- " + makeJSON.getAddress(ch));
 
 			// lists their transaction history
 			System.out.println("\n\t\t  ________________________________________________");
 			System.out.println("\t\t||                                                ||");
 			System.out.println("\t\t|| > TRANSACTION HISTORY                          ||");
 			System.out.println("\t\t||________________________________________________||");
-			System.out.println("\n\t\t  " + mainClass.transactionsMap.get(ch));
+			System.out.println("\n\t\t  " + makeJSON.getTransactions(ch));
 		}
 	}
 }
